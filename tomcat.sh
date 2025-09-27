@@ -1,12 +1,13 @@
-amazon-linux-extras install java-openjdk11 -y
-wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.40/bin/apache-tomcat-10.1.40.tar.gz
-tar -zxvf apache-tomcat-10.1.40.tar.gz
-sed -i '56  a\<role rolename="manager-gui"/>' apache-tomcat-10.1.40/conf/tomcat-users.xml
-sed -i '57  a\<role rolename="manager-script"/>' apache-tomcat-10.1.40/conf/tomcat-users.xml
-sed -i '58  a\<user username="tomcat" password="root123456" roles="manager-gui, manager-script"/>' apache-tomcat-10.1.40/conf/tomcat-users.xml
-sed -i '59  a\</tomcat-users>' apache-tomcat-10.1.40/conf/tomcat-users.xml
-sed -i '56d' apache-tomcat-10.1.40/conf/tomcat-users.xml
-sed -i '21d' apache-tomcat-10.1.40/webapps/manager/META-INF/context.xml
-sed -i '22d' apache-tomcat-10.1.40/webapps/manager/META-INF/context.xml
-sh apache-tomcat-10.1.40/bin/startup.sh
+sudo yum install java-11-amazon-corretto-devel -y
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.45/bin/apache-tomcat-10.1.45.tar.gz
+tar -zxvf apache-tomcat-10.1.45.tar.gz
+sed -i '56  a\<role rolename="manager-gui"/>' apache-tomcat-10.1.45/conf/tomcat-users.xml
+sed -i '57  a\<role rolename="manager-script"/>' apache-tomcat-10.1.45/conf/tomcat-users.xml
+sed -i '58  a\<user username="tomcat" password="root123456" roles="manager-gui, manager-script"/>' apache-tomcat-10.1.45/conf/tomcat-users.xml
+sed -i '59  a\</tomcat-users>' apache-tomcat-10.1.45/conf/tomcat-users.xml
+sed -i '56d' apache-tomcat-10.1.45/conf/tomcat-users.xml
+sed -i '21d' apache-tomcat-10.1.45/webapps/manager/META-INF/context.xml
+sed -i '22d' apache-tomcat-10.1.45/webapps/manager/META-INF/context.xml
+sh apache-tomcat-10.1.45/bin/startup.sh
+
 
